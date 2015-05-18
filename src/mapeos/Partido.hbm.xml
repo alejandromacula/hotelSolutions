@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Partido" table="partido">
+		<id column="idPartido" name="idPartido">
+			<generator class="identity"/>
+		</id>
+		
+	  	
+	  	<property name="nombre" column="partido" type="string" />
+	  	
+	  	
+	  	<many-to-one name="Provincia" class="datos.Provincia" lazy="false"
+	
+			column="idprovincia" not-null="true"/> 	
+	  	
+	
+	</class>
+</hibernate-mapping>

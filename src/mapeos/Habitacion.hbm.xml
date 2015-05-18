@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Habitacion" table="habitacion">
+		<id column="idHabitacion" name="idHabitacion">
+			<generator class="identity"/>
+		</id>
+		<property name="estado" column="estado" type="boolean"/>
+		<property name="ocupada" column="ocupada" type="boolean"/>
+		<property name="piso" column="piso" type="int"/>
+	  	<property name="nroHab" column="nroHab" type="int"/>
+	  	<property name="observaciones" column="observaciones" type="string" />
+	  	
+	  	
+	  
+	<many-to-one name="Hotel" class="datos.Hotel" lazy="false"
+	
+	column="idHotel" not-null="true"/>
+	
+	
+	
+	<many-to-one name="tipoDeHabitacion" class="datos.TipoDeHabitacion" lazy="false"
+	
+	column="idTipoDeHabitacion" not-null="true"/>   <!-- column es la columna de la clave foranea que une a tblUsuario con tblTipoDeUsuario -->
+	
+	
+	
+	
+	
+	</class>
+</hibernate-mapping>
+
