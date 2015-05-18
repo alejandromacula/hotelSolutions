@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Reserva" table="reserva">
+		<id column="idReserva" name="idReserva">
+			<generator class="identity"/>
+		</id>
+		
+	  	<property name="senia" column="senia" type="float" />
+	  	<property name="precioFinal" column="precioFinal" type="float" />
+	  	<property name="desde" column="desde" type="calendar" />
+	  	<property name="hasta" column="hasta" type="calendar" />
+	  	<property name="confirmada" column="confirmada" type="boolean" />
+	  	<property name="fecha" column="fecha" type="calendar" />
+	  	<property name="observaciones" column="observaciones" type="string" />
+	  	
+	  	
+	 
+	<many-to-one name="habitacion" class="datos.Habitacion" lazy="false"
+	
+	column="idHabitacion" not-null="true"/>
+	
+	<many-to-one name="usuario" class="datos.Usuario" lazy="false"
+	
+	column="idUsuario" not-null="true"/>
+	
+		
+	
+	</class>
+</hibernate-mapping>
+
