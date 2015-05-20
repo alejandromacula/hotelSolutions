@@ -15,8 +15,8 @@ public class testMostrarUsuario {
 			
 		
 		AdministradorUsuarios adm=new AdministradorUsuarios();
-		//System.out.println(adm.traerUsuario("alejandrom123", "am123"));
-		System.out.println(adm.traerUsuario(1));
+		System.out.println(adm.traerUsuario("aa", "aa"));
+		//System.out.println(adm.traerUsuario(1));
 		
 	}
 }
