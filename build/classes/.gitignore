@@ -1,10 +1,2 @@
-/com/
-/controladores/
-/dao/
-/datos/
-/funciones/
 /hibernate.cfg.xml
-/mapeos/
-/negocio/
-/test/
-/usuario/
+/.gitignore
