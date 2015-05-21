@@ -41,6 +41,21 @@ public class UsuarioDao {
 		return lista;
 
 	}
+	
+	public Usuario traerUsuario(String nombreDeUsuario) throws HibernateException {
+		Usuario usuario = null;
+		try {
+		iniciaOperacion();
+		usuario = (Usuario ) session
+		.createQuery("select u from Usuario u where u.nombreDeUsuario =	:nombreDeUsuario")
+		.setParameter("nombreDeUsuario",nombreDeUsuario )
+
+		.uniqueResult();
+		} finally {
+		session.close();
+		}
+		return usuario;
+		}
 
 	public Usuario traerUsuario(String nombreDeUsuario , String password) throws HibernateException {
 		Usuario usuario = null;
