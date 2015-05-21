@@ -39,17 +39,16 @@ public class MostrarUsuarioServlet extends HttpServlet {
 			response.setContentType("text/html;charset=UTF-8");
 			try {
 				String nombreDeUsuario =  request.getParameter( "nombreDeUsuario" );
-				String password =  request.getParameter( "password" );
-				System.out.println("usuario: "+nombreDeUsuario + "pass:" + password);
+				
 				AdministradorUsuarios admusuario=new AdministradorUsuarios();
-				Usuario usuario=admusuario.traerUsuario( nombreDeUsuario, password );
+				Usuario usuario=admusuario.traerUsuario( nombreDeUsuario);
 				System.out.println(usuario);
 				request.setAttribute("usuario", usuario);
 				request.getRequestDispatcher("/vistaUsuario.jsp").forward(request ,
 				response);
 			} catch (
 			Exception e) {
-			response.sendError(500, "El Nombre de Usuario y/o Password ingresado no existe en la base de datos.");
+			response.sendError(500, "El Nombre de Usuario ingresado no existe en la base de datos.");
 			}
 			}
 	
