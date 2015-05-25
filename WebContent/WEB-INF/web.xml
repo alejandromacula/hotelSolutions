@@ -9,8 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
   <servlet>
     <servlet-name>AgregarUsuarioController</servlet-name>
     <servlet-class>controladores.AgregarUsuarioController</servlet-class>
@@ -19,9 +17,7 @@
     <servlet-name>AgregarUsuarioController</servlet-name>
     <url-pattern>/AgregarUsuarioController</url-pattern>
   </servlet-mapping>
-  
-  
-    <servlet>
+  <servlet>
     <servlet-name>MostrarUsuarioServlet</servlet-name>
     <servlet-class>controladores.MostrarUsuarioServlet</servlet-class>
   </servlet>
@@ -29,5 +25,4 @@
     <servlet-name>MostrarUsuarioServlet</servlet-name>
     <url-pattern>/MostrarUsuarioServlet</url-pattern>
   </servlet-mapping>
-  
 </web-app>

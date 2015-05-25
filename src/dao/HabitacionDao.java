@@ -31,7 +31,7 @@ public class HabitacionDao {
 	List<Habitacion> lista=null;
 	try {
 		iniciaOperacion();
-		lista=session.createQuery("from Habitacion h inner join fetch h.????????").list(); //Preguntar que va después del punto
+		lista=session.createQuery("from Habitacion h").list();
 
 		} finally {
 			session.close();
@@ -41,7 +41,7 @@ public class HabitacionDao {
 		return lista;
 
 	}
-
+	
 	public Habitacion traerHabitacion(int idHabitacion) throws HibernateException {
 		
 		Habitacion habitacion = null; //cambiar localidad por tipo de usuario

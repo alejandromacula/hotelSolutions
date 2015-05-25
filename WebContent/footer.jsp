@@ -25,11 +25,14 @@
     
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
-
+	
+	
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>    
 	<script src="assets/js/zabuto_calendar.js"></script>	
-	
+	<script type="text/javascript" src="assets/js/moment.js"></script>
+    <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/fecha.js"></script>
 	
 	<script type="application/javascript">
         $(document).ready(function () {
@@ -65,7 +68,6 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
-  
 
   </body>
 </html>

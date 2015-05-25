@@ -1,16 +1,14 @@
 package dao;
 
+import java.util.GregorianCalendar;
 import java.util.List;
-
-
-
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import datos.HibernateUtil;
 import datos.Reserva;
-
 public class ReservaDao {
 	
 	//private ObservableList<Usuario> personData = FXCollections.observableArrayList();
@@ -28,20 +26,22 @@ public class ReservaDao {
 		throw new HibernateException("ERROR en la capa de acceso a datos", he);
 	}
 
-	public List<Reserva> traerListaReservas() throws HibernateException {
-	List<Reserva> lista=null;
-	try {
-		iniciaOperacion();
-		lista=session.createQuery("from Reserva r inner join fetch r.????????").list(); //Preguntar que va después del punto
+	public List<Reserva> traerListaReservas( GregorianCalendar desde, GregorianCalendar hasta ) throws HibernateException {
+		List<Reserva> lista=null;
+		
+		
+		try {
+			iniciaOperacion();
+			lista=session.createQuery("from Reserva t where t.desde >= :desde and t.hasta <= :hasta").setCalendarDate("desde", desde).setCalendarDate("hasta", hasta).list();
+			
+			} finally {
+				session.close();
 
-		} finally {
-			session.close();
+		}
 
-	}
+			return lista;
 
-		return lista;
-
-	}
+		}
 
 	public Reserva traerReserva(int idReserva) throws HibernateException {
 		
