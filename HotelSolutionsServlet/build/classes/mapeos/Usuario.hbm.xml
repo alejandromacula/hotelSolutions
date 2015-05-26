@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Usuario" table="usuario">
+		<id column="idUsuario" name="idUsuario">
+			<generator class="identity"/>
+		</id>
+		<property name="nombreDeUsuario" column="nombreDeUsuario" type="string" />
+	  	<property name="password" column="password" type="string"/>
+		<property name="nombre" column="nombre" type="string"/>
+	  	<property name="apellido" column="apellido" type="string" />
+		<property name="dni" column="dni" type="int"/>
+	  	<property name="direccion" column="calle" type="string"/>
+	  	<property name="numero" column="numeroCalle" type="int"/>
+	  	<property name="puerta" column="puerta" type="string"/>
+	  	<property name="telefono" column="telefono" type="int"/>
+	  	<property name="email" column="email" type="string"/>
+	  	<property name="fechaNacimiento" column="fechaNacimiento" type="calendar"/>
+	  	<property name="sexo" column="sexo" type="char"/>
+
+	
+	
+	
+	<many-to-one name="tipoDeUsuario" class="datos.TipoDeUsuario" lazy="false"
+	
+	column="idTipoDeUsuario" not-null="true"/>   <!-- column es la columna de la clave foranea que une a tblUsuario con tblTipoDeUsuario -->
+	
+	
+	<many-to-one name="localidad" class="datos.Localidad" lazy="false"
+	
+	column="idlocalidad" not-null="true"/>  
+	
+	
+	
+	
+	
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Hotel" table="hotel">
+		<id column="idHotel" name="idHotel">
+			<generator class="identity"/>
+		</id>
+		<property name="nombre" column="nombre" type="string"/>
+		<property name="razonSocial" column="razonSocial" type="string"/>
+	  	<property name="cuit" column="cuit" type="int"/>
+	  	<property name="estrellas" column="estrellas" type="int"/>
+		<property name="direccion" column="direccion" type="string"/>
+		<property name="numero" column="numero" type="int"/>
+	  	<property name="puerta" column="puerta" type="string" />
+	  	<property name="telefono" column="telefono" type="int"/>
+	  	<property name="email" column="email" type="string"/>
+	  	
+	  	 
+	
+	<many-to-one name="localidad" class="datos.Localidad" lazy="false"
+	
+	column="idlocalidad" not-null="true"/>
+	
+	<!--
+	
+	<one-to-many class="datos.Habitacion" />
+	
+	-->
+	
+	</class>
+</hibernate-mapping>
