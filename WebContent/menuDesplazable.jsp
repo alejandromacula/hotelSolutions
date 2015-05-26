@@ -24,7 +24,8 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="consultarUsuario.jsp">Consultar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/registrarse.html">Nuevo</a></li>
+                          <li><a  href="agregarUsuario.jsp">Nuevo</a></li>
+                          <li><a  href="modificarUsuario.jsp">Modificar</a></li>
                           <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
                       </ul>
                   </li>
@@ -35,8 +36,9 @@
                           <span>Habitaciones</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="/HotelSolutionsServlet/Usuario.html">Consultar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/registrarse.html">Nueva</a></li>
+                          <li><a  href="consultarHabitacion.jsp">Consultar</a></li>
+                          <li><a  href="agregarHabitacion.jsp">Nueva</a></li>
+                          <li><a  href="modificarHabitacion.jsp">Modificar</a></li>
                           <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
                       </ul>
                   </li>
@@ -49,6 +51,7 @@
                       <ul class="sub">
                           <li><a  href="/HotelSolutionsServlet/Usuario.html">Consultar</a></li>
                           <li><a  href="/HotelSolutionsServlet/registrarse.html">Nueva</a></li>
+                          <li><a  href="modificarReserva.jsp">Modificar</a></li>
                           <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
                       </ul>
                   </li>

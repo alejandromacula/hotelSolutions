@@ -25,4 +25,16 @@
     <servlet-name>MostrarUsuarioServlet</servlet-name>
     <url-pattern>/MostrarUsuarioServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>MostrarHabitacionController</servlet-name>
+    <servlet-class>controladores.MostrarHabitacionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AgregarHabitacionController</servlet-name>
+    <url-pattern>/AgregarHabitacionController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AgregarHabitacionController</servlet-name>
+    <servlet-class>controladores.AgregarHabitacionController</servlet-class>
+  </servlet>
 </web-app>

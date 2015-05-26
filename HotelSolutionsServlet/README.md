@@ -1,2 +1,0 @@
-# hotelSolutions
-java servlets
