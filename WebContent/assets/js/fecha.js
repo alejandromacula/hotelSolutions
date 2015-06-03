@@ -19,7 +19,9 @@ $("#buscarUsuario").click(function(){
             success:function(data){
             	document.getElementById('ResultadoBusquedaUsuario').innerHTML = '<i class="fa fa-check"></i>'+data;
             	},
-            error:function(){alert('error');}
+            error:function(){
+            	document.getElementById('ResultadoBusquedaUsuario').innerHTML = "usuario inexistente";
+            }
         }
     );
 	
