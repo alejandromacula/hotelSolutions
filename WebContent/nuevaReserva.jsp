@@ -3,6 +3,8 @@
     
      <%@page import="funciones.Funciones"%>
      <%@page import="dao.HabitacionDao"%>
+     <%@page import="dao.ReservaDao"%>
+     <%@page import="datos.Reserva"%>
      <%@page import="java.util.List"%>
      <%@page import="datos.Habitacion"%>
      <%@include file="/header.jsp" %>
@@ -20,117 +22,31 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Buscar Usuario</h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Nueva Reserva</h4>
                      
                       <form action=" /HotelSolutionsServlet/MostrarUsuarioServlet" class="form-horizontal style-form" method="get">
                           
-                          
-                          
-                          
-                          
-                          <div class="btn-group">
-						  <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">Mes<span class="caret"></span>
-						  </button>
-						  <ul id= "seleccionarmes" class="dropdown-menu" role="menu">
-						    <li data-value="1" ><a>Enero</a></li>
-						    <li data-value='2' ><a>Febrero</a></li>
-						    <li data-value='3' ><a>Marzo</a></li>
-						    <li data-value='4' ><a>Abril</a></li>
-						    <li data-value='5' ><a>Mayo</a></li>
-						    <li data-value='6' ><a>Junio</a></li>
-						    <li data-value='7' ><a>Julio</a></li>
-						    <li data-value='8' ><a>Agosto</a></li>
-						    <li data-value='9' ><a>Septiembre</a></li>
-						    <li data-value='10'><a>Octubre</a></li>
-						    <li data-value='11'><a>Noviembre</a></li>
-						    <li data-value='12'><a>Diciembre</a></li>
-						  </ul>
-						</div>
-						
-						<div id="grillaReservas"></div>
-                          
-                          
                           <br><br><br>
-                          
-                          
-                          <script>
-                          function generarGrilla(mes, anio){
-                        		var cantidadDeDias = cantidadDiasMes(mes, anio);
-                        		var cabeceraDiasTabla= '<tr>';
-                        		cabeceraDiasTabla= cabeceraDiasTabla + '<th> Habitacion </th>';
-                        		
-                        		for (i = 1; i < cantidadDeDias+1; i++) { 
-                        			if(i<10){
-                        				cabeceraDiasTabla= cabeceraDiasTabla+'<th> 0'+ i +'</th>';}
-                       				else{
-                       					cabeceraDiasTabla= cabeceraDiasTabla+'<th>'+ i +'</th>';}
-                        		}
-                        		
-                        		<% HabitacionDao habitacionDao=new HabitacionDao();
-	                 			   List<Habitacion> habitaciones=habitacionDao.traerListaHabitacion();
-	                 			   int cantidadDeHabitaciones=habitaciones.size();%>
-                 			   
-	                 			var filasHabitaciones='<tbody><tr/>';
-	                 			<% for (Habitacion habitacion:habitaciones){ %>
-	                 				  filasHabitaciones= filasHabitaciones+'<tr><td>' + <%= habitacion.getNroHab() %> + '</td>';
-	                 				  for (i = 1; i < cantidadDeDias+1; i++) { 
-	                 					 filasHabitaciones= filasHabitaciones+'<td> - </td>';
-                 					  }
-	                 				  filasHabitaciones = filasHabitaciones + '</tr>';
-                 				 <%}%>
-                        		
-                        		cabeceraDiasTabla=cabeceraDiasTabla + '</tr>';
-                        		
-                        		document.getElementById('grillaReservas').innerHTML = 
-                        			'<table class="table table-bordered table-striped table-condensed">'+
-                        			'<thead>'+ 
-                        			cabeceraDiasTabla +
-                        			'</thead>'+
-                        			filasHabitaciones+
-                        			'</tbody></table>';
-
-                        	}
-                          </script>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Datos del Cliente</label>
+                              
+                              <div class="col-lg-6">
+							    <div class="input-group">
+							      <input id="nombreDeUsuario" type="text" style ="width: 206px;" class="form-control" placeholder="Nombre de usuario...">
+							      <span class="input-group-btn">
+							        <button id="buscarUsuario" style="margin-right: 276px;" class="btn btn-default" type="button">Buscar</button>
+							      </span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-6 -->
+							  <div id="ResultadoBusquedaUsuario"></div>
+                          </div>
                           
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="text" placeholder="Nombre de usuario" class="form-control" name="nombreDeUsuario">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="text" placeholder="Seña" class="form-control" name="senia">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control"  placeholder="Precio final" name="precioFinal">
-                              </div>
-                          </div>
-                                            
-
-                          <a id="traerDias" class="btn btn-success  btn-sm" href="javascript:;">traer javascript</a>
-                          <div id="mydiv"><span class="prego">Something</span></div>
-                          
-                          <input type="text" name="daterange" value="" />
- 						  <script type="text/javascript">
-							$(function() {
-							    $('input[name="daterange"]').daterangepicker();
-							});
-						  </script>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" placeholder="Desde" name="desde">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" placeholder="Hasta" name="hasta">
+                              <label class="col-sm-2 col-sm-2 control-label">Datos de la Reserva</label>
+                              <div style ="padding-left: 0px;"  class="col-sm-10">
+                                  <input type="text" style="width: 15%;margin-right: 100px;" placeholder="Seña" class="form-control" name="senia">
+                                  <input type="text" style="width: 15%;margin-right: 100px; display: initial;" class="form-control"  placeholder="Precio final" name="precioFinal">
+                         	  	  <input type="text" style="width: 20%;margin-right: 100px; display: initial;" class="form-control" name="daterange" placeholder="Desde - Hasta" value="" name="fechasReservadas"/>
                               </div>
                           </div>
                           <div class="form-group">

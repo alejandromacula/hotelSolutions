@@ -50,7 +50,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="/HotelSolutionsServlet/Usuario.html">Consultar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/registrarse.html">Nueva</a></li>
+                          <li><a  href="nuevaReserva.jsp">Nueva</a></li>
                           <li><a  href="modificarReserva.jsp">Modificar</a></li>
                           <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
                       </ul>

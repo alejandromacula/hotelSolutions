@@ -4,14 +4,76 @@
 
 $("#traerDias").click(function(){
 	document.getElementById('mydiv').innerHTML = '<span class="prego">traido desde el javascript</span>';
-
+	
     });
+
+$("#buscarUsuario").click(function(){
+	var nombreDeUsuario = $('#nombreDeUsuario').val();
+	$.ajax
+    (
+        {
+            url:'buscarUsuario',
+            data:{"nombreDeUsuario":nombreDeUsuario},
+            type:'post',
+            cache:false,
+            success:function(data){
+            	document.getElementById('ResultadoBusquedaUsuario').innerHTML = '<i class="fa fa-check"></i>'+data;
+            	},
+            error:function(){alert('error');}
+        }
+    );
+	
+    });
+$(document).ready ( function(){
+	  inicializarTabla();
+});
 
 $("#seleccionarmes li").click(function(){
 	var mes = $(this).attr('data-value');
-	generarGrilla(mes, 2015);
+	var nombreMes = $(this).attr('data-nombre');
+	document.getElementById('nombreMesSeleccionado').innerHTML = nombreMes;
+	
+	$.ajax
+    (
+        {
+            url:'tablaReservas',
+            data:{"mes":mes,"anio":2015},
+            type:'post',
+            cache:false,
+            success:function(data){
+            	document.getElementById('grillaReservas').innerHTML = data;
+            	},
+            error:function(){alert('error');}
+        }
+    );
+	
 	
 });
+
+
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
+
+function inicializarTabla(){
+	var mes = 1;
+	var anio=2015;
+	$.ajax
+    (
+        {
+            url:'tablaReservas',
+            data:{"mes":mes,"anio":anio},
+            type:'post',
+            cache:false,
+            success:function(data){
+            	document.getElementById('grillaReservas').innerHTML = data;
+            	},
+            error:function(){alert('error');}
+        }
+    );
+	
+	
+};
 
 function cantidadDiasMes(mes, anio){	
 	var cantidadDias=0;
@@ -58,6 +120,8 @@ function cantidadDiasMes(mes, anio){
 	
 	return cantidadDias;
 }
+
+
 
 function esBisiesto(anio){
 	

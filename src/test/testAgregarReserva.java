@@ -16,9 +16,9 @@ public class testAgregarReserva {
 		
 		
 		ReservaDao reservaDao=new ReservaDao();
-		reservaDao.altaReserva(new Reserva(112, 500, new GregorianCalendar(2015, 1, 12),
-				new GregorianCalendar(2015, 01, 30), true, new GregorianCalendar(2015, 1, 1), "reserva de prueba",
-				habDao.traerHabitacion(1), usDao.traerUsuario(1)));
+		reservaDao.altaReserva(new Reserva(112, 500, new GregorianCalendar(2015, 0, 22),
+				new GregorianCalendar(2015, 0, 30), false, new GregorianCalendar(2015, 1, 1), "reserva sin confirmar",
+				habDao.traerHabitacion(2), usDao.traerUsuario(1)));
 		
 	}
 

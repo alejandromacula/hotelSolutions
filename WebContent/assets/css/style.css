@@ -2237,7 +2237,8 @@ label {
 }
 
 .site-min-height {
-    min-height: 900px;
+  min-height: 665px;
+  height: auto;
 }
 
 

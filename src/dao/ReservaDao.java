@@ -58,6 +58,20 @@ public class ReservaDao {
 
 	}
 	
+	public Reserva traerReserva(int numeroHabitacion, GregorianCalendar dia ) throws HibernateException {
+		
+		Reserva reserva = null; 
+		
+		try {
+			iniciaOperacion();
+			reserva = (Reserva) session.createQuery("from Reserva t where :dia between t.desde and t.hasta and t.habitacion.nroHab = :habitacion").setParameter("dia", dia ).setParameter("habitacion", numeroHabitacion ).uniqueResult();
+			
+   		} finally {
+   			session.close();
+   		}
+   		return reserva;
+
+	}
 	
 	public long altaReserva(Reserva reserva) {
 		long idReserva=0;

@@ -26,6 +26,14 @@
     <url-pattern>/MostrarUsuarioServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>BuscarUsuario</servlet-name>
+    <servlet-class>controladores.BuscarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarUsuario</servlet-name>
+    <url-pattern>/buscarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>MostrarHabitacionController</servlet-name>
     <servlet-class>controladores.MostrarHabitacionController</servlet-class>
   </servlet>
@@ -36,5 +44,13 @@
   <servlet>
     <servlet-name>AgregarHabitacionController</servlet-name>
     <servlet-class>controladores.AgregarHabitacionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TablaReservas</servlet-name>
+    <url-pattern>/tablaReservas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TablaReservas</servlet-name>
+    <servlet-class>controladores.TablaReservas</servlet-class>
   </servlet>
 </web-app>
