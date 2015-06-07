@@ -31,12 +31,6 @@ public class AdministradorUsuarios {
 		}
 		
 		
-		public Usuario traerUsuario(String nombreUsuario){
-			
-			
-			return usuarioDao.traerUsuario(nombreUsuario);
-		}
-
 		
 		public Usuario traerUsuario(String nombreUsuario, String password){
 			

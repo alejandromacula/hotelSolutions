@@ -28,49 +28,7 @@ public class Funciones {
 	return aux;
    }
 	
-	public static int cantidadDiasMes(int mes, int anio){
-		int cantidadDias=0;
-		if (mes == 1){
-			cantidadDias= 31;
-		}
-		else if (mes == 2){
-			if (esBisiesto(anio))
-				cantidadDias= 29;
-			else cantidadDias= 28;
-		}
-		else if (mes == 3){
-			cantidadDias= 31;
-		}
-		else if (mes == 4){
-			cantidadDias= 30;
-		}
-		else if (mes == 5){
-			cantidadDias= 31;
-		}
-		else if (mes == 6){
-			cantidadDias= 30;
-		}
-		else if(mes == 7){
-			cantidadDias= 31;
-		}
-		else if(mes == 8){
-			cantidadDias= 31;
-		}
-		else if(mes == 9){
-			cantidadDias= 30;
-		}
-		else if(mes == 10){
-			cantidadDias= 31;
-		}
-		else if(mes == 11){
-			cantidadDias= 30;
-		}
-		else if(mes == 12){
-			cantidadDias= 31;
-		}
-		
-		return cantidadDias;
-	}
+	
 	
 	public static boolean esIgual(GregorianCalendar fecha1, GregorianCalendar fecha2){
 		int anio1 = fecha1.get(GregorianCalendar.YEAR);
@@ -210,15 +168,7 @@ public class Funciones {
 		return dia+ "/" +mes+ "/" +anio;
 	}
 	
-	public static String traerFechaCortaAAAAMMDD(GregorianCalendar fecha){
-		
-		int anio = fecha.get(GregorianCalendar.YEAR);
-		int mes = fecha.get(GregorianCalendar.MONTH);
-		mes = mes+1;
-		int dia = fecha.get(GregorianCalendar.DAY_OF_MONTH);
-		
-		return anio+ "-" +mes+ "-" +dia;
-	}
+
 
 	public static String traerFechaLarga(GregorianCalendar fecha1){
 		
