@@ -49,7 +49,7 @@ public class MostrarHabitacionController extends HttpServlet {
 				response);
 			} catch (
 			Exception e) {
-			response.sendError(500, "El Id de habitación ingresado no existe en la base de datos.");
+				response.sendRedirect("500.html");
 			}
 			}
 	

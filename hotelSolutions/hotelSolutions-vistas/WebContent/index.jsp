@@ -25,9 +25,7 @@
           
           	<div class="row mt">
           		<div class="col-lg-12">
-          		
 
-				
                           <div class="btn-group">
 						  <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">Mes<span class="caret"></span>
 						  </button>
@@ -64,7 +62,14 @@
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
-      
+
        
        
        <%@include file="/footer.jsp" %>
+	  <script>
+	   var name ='<%= nombre %>';  //declarado en el header
+       msjBienvenida(name);
+	   inicializarTabla();
+	  </script>
+</body>
+</html>

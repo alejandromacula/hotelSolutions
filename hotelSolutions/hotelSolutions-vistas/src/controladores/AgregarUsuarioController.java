@@ -17,6 +17,7 @@ import datos.Usuario;
 import dao.LocalidadDao;
 
 
+
 public class AgregarUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -80,7 +81,7 @@ public class AgregarUsuarioController extends HttpServlet {
 				
 			} catch (
 			Exception e) {
-			response.sendError(500, "El Usuario no pudo ser ingresado en la base de datos.");
+				response.sendRedirect("500.html");
 		}
 		}
 	

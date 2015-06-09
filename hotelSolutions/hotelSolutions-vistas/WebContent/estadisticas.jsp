@@ -2,9 +2,18 @@
     pageEncoding="ISO-8859-1"%>
 
      <%@include file="/header.jsp" %>
-     
+     <%@page import="dao.HabitacionDao"%>
+     <%@page import="dao.ReservaDao"%>
      <%@include file="/menuDesplazable.jsp" %>
+     <%
      
+     	ReservaDao reservaDao=new ReservaDao();
+		HabitacionDao habDao= new HabitacionDao();
+		float cantidadHabitaciones=habDao.traerListaHabitacion().size();
+		float ocupacionHoy=reservaDao.cantidadDeReservasHoy();
+		float promedio=(ocupacionHoy/cantidadHabitaciones)*100;
+		int promedioRedondeado=Math.round(promedio);
+     %>
      
       
      <!-- **********************************************************************************************************************************************************
@@ -25,18 +34,18 @@
                       			</div>
 								<div class="row">
 									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-database"></i> 95%</p>
+										<p><i class="fa fa-database"></i> <%=promedioRedondeado%>%</p>
 									</div>
 	                      		</div>
 								<canvas id="serverstatus01" height="120" width="120"></canvas>
 								<script>
 									var doughnutData = [
 											{
-												value: 95,
+												value: <%=promedioRedondeado%>,
 												color:"#68dff0"
 											},
 											{
-												value : 5,
+												value :<%= 100-promedioRedondeado%>,
 												color : "#fdfdfd"
 											}
 										];

@@ -20,30 +20,217 @@
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Agregar Usuario</h4>
                      
-                      <form action=" /HotelSolutionsServlet/AgregarUsuarioController" class="form-horizontal style-form" method="get">
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                              			
+                      <form action=" /HotelSolutionsServlet/AgregarUsuarioController" class="form-horizontal style-form" method="post">
+                           <br> <br> <br>
+                      
+                      
+                        
+						 <div class="form-group">
+                             
 
-                         Nombre de usuario: <input type="text" class="form-control" name="nombreDeUsuario">
-                         Password:		    <input type="text" class="form-control" name="password">
-                         Nombre:	        <input type="text" class="form-control" name="nombre">
-                         Apellido:			<input type="text" class="form-control" name="apellido">
-                         DNI:				<input type="text" class="form-control" name="dni">
-                         Dirección:         <input type="text" class="form-control" name="direccion">
-                         Numero de calle:   <input type="text" class="form-control" name="numero">
-                         Puerta:	        <input type="text" class="form-control" name="puerta">
-                         Telefono:	        <input type="text" class="form-control" name="telefono">
-                         E-mail:	        <input type="text" class="form-control" name="email">
-                         Fecha de nacimiento:       <input type="text" class="form-control" name="diaNacimiento" style="width: 45px;">
-                                  					<input type="text" class="form-control" name="mesNacimiento" style="width: 45px;">
-                                  					<input type="text" class="form-control" name="anioNacimiento" style="width: 85px;">
-                         Tipo de usuario:         <input type="text" class="form-control" name="tipoDeUsuario">
-                         Localidad:         <input type="text" class="form-control" name="localidad">
-                         Sexo:         <input type="text" class="form-control" name="sexo">
-                              </div>
-                          </div>
+							<label class="col-sm-2 col-sm-2 control-label">Nombre de usuario</label>
+
+							<div class="col-xs-2">
+									<input id="nombreDeUsuario" type="text" name="nombreDeUsuario"
+										class="form-control " placeholder="Nombre de usuario..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+						
+						
+						<div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Password</label>
+
+							<div class="col-xs-2">
+									<input id="password" type="text" name="password"
+										class="form-control " placeholder="Password..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+						
+                        
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+
+							<div class="col-xs-2">
+									<input id="nombre" type="text" name="nombre"
+										class="form-control " placeholder="Nombre..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+                               
+                               
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Apellido</label>
+
+							<div class="col-xs-2">
+									<input id="apellido" type="text" name="apellido"
+										class="form-control " placeholder="Apellido..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+                               
+                               
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">DNI</label>
+
+							<div class="col-xs-2">
+									<input id="dni" type="text" name="dni"
+										class="form-control " placeholder="DNI..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div> 
+                               
+                             
+                            <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Dirección</label>
+
+							<div class="col-xs-2">
+									<input id="direccion" type="text" name="direccion"
+										class="form-control " placeholder="Dirección..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>   
+                               
+                        
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Numero de calle</label>
+
+							<div class="col-xs-2">
+									<input id="numero" type="text" name="numero"
+										class="form-control " placeholder="N° de calle..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>       
+                               
+                               
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Puerta</label>
+
+							<div class="col-xs-1">
+									<input id="puerta" type="text" name="puerta"
+										class="form-control " placeholder="Puerta..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+                        
+                        
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Telefono</label>
+
+							<div class="col-xs-2">
+									<input id="telefono" type="text" name="telefono"
+										class="form-control " placeholder="Telefono..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>
+                               
+                         
+                          <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">E-mail</label>
+
+							<div class="col-xs-3">
+									<input id="email" type="text" name="email"
+										class="form-control " placeholder="E-mail..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>  
+                                  
+                        
+                          <div class="row form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Fecha de nacimiento</label>
+
+							<div class="col-xs-1">
+									<input id="diaNacimiento" type="text" name="diaNacimiento"
+										class="form-control " placeholder="Día..." >
+							</div>
+							
+							<div class="col-xs-1">
+									<input id="mesNacimiento" type="text" name="mesNacimiento"
+										class="form-control " placeholder="Mes..." >
+							</div>
+								
+							<div class="col-xs-1">
+									<input id="anioNacimiento" type="text" name="anioNacimiento"
+										class="form-control " placeholder="Año..." >
+							</div>
+							
+						</div>
+                        
+                        
+                        <div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Sexo</label>
+
+							<div class="col-xs-1">
+									<input id="sexo" type="text" name="sexo"
+										class="form-control " placeholder="Sexo..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>  
+						
+						
+						<div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Tipo de Usuario</label>
+
+							<div class="col-xs-2">
+									<input id="tipoDeUsuario" type="text" name="tipoDeUsuario"
+										class="form-control " placeholder="ID de tipo de Usuario..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>  
+						
+						
+						<div class="form-group">
+                             
+
+							<label class="col-sm-2 col-sm-2 control-label">Localidad</label>
+
+							<div class="col-xs-2">
+									<input id="localidad" type="text" name="localidad"
+										class="form-control " placeholder="ID de localidad..." >
+							</div>
+							<!-- /.col-xs-2 -->
+							
+						</div>  
+       
+                         
+
                           
                           <button style:" type="submit" class="btn btn-info">Dar de Alta</button>
                         

@@ -2,14 +2,13 @@ package dao;
 
 import java.util.List;
 
-
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.HibernateUtil;
 import datos.Habitacion;
+import datos.TipoDeHabitacion;
 public class HabitacionDao {
 	
 	//private ObservableList<Usuario> personData = FXCollections.observableArrayList();
@@ -41,6 +40,21 @@ public class HabitacionDao {
 		return lista;
 
 	}
+	
+	public List<Habitacion> traerListaHabitacion(TipoDeHabitacion tipo) throws HibernateException {
+		List<Habitacion> lista=null;
+		try {
+			iniciaOperacion();
+			lista=session.createQuery("from Habitacion h where h.tipoDeHabitacion.tipo = :tipoHab  ").setParameter("tipoHab", tipo.getTipo()).list();
+
+			} finally {
+				session.close();
+
+		}
+
+			return lista;
+
+		}
 	
 	public Habitacion traerHabitacion(int numHabitacion) throws HibernateException {
 		
@@ -75,7 +89,7 @@ public class HabitacionDao {
 	
 	
 	
-	public void modificarHabitacion(Habitacion habitacion) {
+	public Habitacion modificarHabitacion(Habitacion habitacion) {
 		try {
 		iniciaOperacion();
 		session.update(habitacion);
@@ -86,7 +100,24 @@ public class HabitacionDao {
 		} finally {
 		session.close();
 		}
+		return habitacion;
 		}
+	
+	
+	public void eliminarHabitacion(Habitacion habitacion) {
+		try {
+		iniciaOperacion();
+		session.delete(habitacion);
+		tx.commit();
+		} catch (HibernateException he) {
+		manejaExcepcion(he);
+		throw he;
+		} finally {
+		session.close();
+		}
+		return;
+		}
+
 	
 
 

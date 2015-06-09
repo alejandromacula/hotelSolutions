@@ -2,7 +2,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2015 - Universidad Nacional De Lanus - OO2
-              <a href="index.html#" class="go-top">
+              <a href="#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -45,8 +45,8 @@
                   });
                   
                });
-               </script>
-
+  	</script>
+	
   </body>
 </html>
 

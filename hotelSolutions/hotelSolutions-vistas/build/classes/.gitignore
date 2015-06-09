@@ -1,5 +1,9 @@
 /hibernate.cfg.xml
+/.gitignore
 /controladores/
 /dao/
 /datos/
 /funciones/
+/mapeos/
+/negocio/
+/test/

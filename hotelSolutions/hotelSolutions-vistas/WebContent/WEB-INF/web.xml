@@ -2,13 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>HotelSolutions</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>indexUsuario.jsp</welcome-file>
   </welcome-file-list>
+  
+  <error-page>
+    <location>/404.html</location>
+</error-page>
+  
   <servlet>
     <servlet-name>AgregarUsuarioController</servlet-name>
     <servlet-class>controladores.AgregarUsuarioController</servlet-class>
@@ -25,26 +25,30 @@
     <servlet-name>MostrarUsuarioServlet</servlet-name>
     <url-pattern>/MostrarUsuarioServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>NuevaReservaController</servlet-name>
-    <servlet-class>controladores.NuevaReservaController</servlet-class>
-  </servlet>
   <servlet-mapping>
-    <servlet-name>NuevaReservaController</servlet-name>
-    <url-pattern>/NuevaReservaController</url-pattern>
+    <servlet-name>ModificarUsuarioController</servlet-name>
+    <url-pattern>/ModificarUsuarioController</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>BuscarUsuario</servlet-name>
-    <servlet-class>controladores.BuscarUsuario</servlet-class>
+    <servlet-name>ModificarUsuarioController</servlet-name>
+    <servlet-class>controladores.ModificarUsuarioController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BuscarUsuario</servlet-name>
-    <url-pattern>/buscarUsuario</url-pattern>
+    <servlet-name>EliminarUsuarioController</servlet-name>
+    <url-pattern>/EliminarUsuarioController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>EliminarUsuarioController</servlet-name>
+    <servlet-class>controladores.EliminarUsuarioController</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>MostrarHabitacionController</servlet-name>
     <servlet-class>controladores.MostrarHabitacionController</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>MostrarHabitacionController</servlet-name>
+    <url-pattern>/MostrarHabitacionController</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AgregarHabitacionController</servlet-name>
     <url-pattern>/AgregarHabitacionController</url-pattern>
@@ -53,6 +57,86 @@
     <servlet-name>AgregarHabitacionController</servlet-name>
     <servlet-class>controladores.AgregarHabitacionController</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarHabitacionController</servlet-name>
+    <url-pattern>/ModificarHabitacionController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModificarHabitacionController</servlet-name>
+    <servlet-class>controladores.ModificarHabitacionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarHabitacionController</servlet-name>
+    <url-pattern>/EliminarHabitacionController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EliminarHabitacionController</servlet-name>
+    <servlet-class>controladores.EliminarHabitacionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MostrarReservaController</servlet-name>
+    <url-pattern>/MostrarReservaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MostrarReservaController</servlet-name>
+    <servlet-class>controladores.MostrarReservaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarReservaController</servlet-name>
+    <url-pattern>/ModificarReservaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModificarReservaController</servlet-name>
+    <servlet-class>controladores.ModificarReservaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarReservaController</servlet-name>
+    <url-pattern>/EliminarReservaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EliminarReservaController</servlet-name>
+    <servlet-class>controladores.EliminarReservaController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NuevaReservaController</servlet-name>
+    <servlet-class>controladores.NuevaReservaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NuevaReservaController</servlet-name>
+    <url-pattern>/NuevaReservaController</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>BuscarUsuario</servlet-name>
+    <servlet-class>controladores.BuscarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarUsuario</servlet-name>
+    <url-pattern>/buscarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>controladores.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>controladores.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ConsultaDisponibilidadController</servlet-name>
+    <servlet-class>controladores.ConsultaDisponibilidadController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConsultaDisponibilidadController</servlet-name>
+    <url-pattern>/consultaDisponibilidad</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>TablaReservas</servlet-name>
     <url-pattern>/tablaReservas</url-pattern>

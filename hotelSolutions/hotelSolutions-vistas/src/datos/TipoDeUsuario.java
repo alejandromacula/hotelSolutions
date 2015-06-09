@@ -7,15 +7,16 @@ public class TipoDeUsuario {
 
 	private int idTipoDeUsuario;
 	private String privilegio;
+	private String tipoDeUsuario;
 	private Set <Usuario> usuarios;
 
 	
 	public TipoDeUsuario (){}
 
-	public TipoDeUsuario(String privilegio) {
+	public TipoDeUsuario(String tipoDeUsuario, String privilegios) {
 
-		
-		this.privilegio = privilegio;
+		this.tipoDeUsuario=tipoDeUsuario;
+		this.privilegio = privilegios;
 	 
 	}
 
@@ -45,15 +46,20 @@ public class TipoDeUsuario {
 		this.usuarios = usuarios;
 	}
 
+	public String getTipoDeUsuario() {
+		return tipoDeUsuario;
+	}
+
+	public void setTipoDeUsuario(String tipoDeUsuario) {
+		this.tipoDeUsuario = tipoDeUsuario;
+	}
+
 	@Override
 	public String toString() {
 		return "TipoDeUsuario [idTipoDeUsuario=" + idTipoDeUsuario
-				+ ", privilegio=" + privilegio + ", usuarios=" + usuarios + "]";
+				+ ", privilegio=" + privilegio + ", tipoDeUsuario="
+				+ tipoDeUsuario + "]";
 	}
 
-
-	
-	
-	
 
 }

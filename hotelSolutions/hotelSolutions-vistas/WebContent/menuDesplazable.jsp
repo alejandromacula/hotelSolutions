@@ -2,13 +2,27 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
+      <%@page import="datos.Usuario"%>
+      <% 
+			HttpSession sessionPanel= (HttpSession) request.getSession();
+			Usuario us=null;
+			us=(Usuario)sessionPanel.getAttribute("usuario"); 
+			String nombre="";
+			String apellido="";
+			if(us!=null){
+				nombre=us.getNombre();
+				apellido=us.getApellido();
+			}
+				
+		%> 
+      
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Alejandro Macula</h5>
+              	  <p class="centered"><a href="#"><img src="assets/img/business-man-icon.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered"><%= nombre %> <%= apellido %></h5>
               	  	
                   <li class="mt">
                       <a class="active" href="index.jsp">
@@ -26,7 +40,7 @@
                           <li><a  href="consultarUsuario.jsp">Consultar</a></li>
                           <li><a  href="agregarUsuario.jsp">Nuevo</a></li>
                           <li><a  href="modificarUsuario.jsp">Modificar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
+                          <li><a  href="eliminarUsuario.jsp">Eliminar</a></li>
                       </ul>
                   </li>
                   
@@ -39,7 +53,7 @@
                           <li><a  href="consultarHabitacion.jsp">Consultar</a></li>
                           <li><a  href="agregarHabitacion.jsp">Nueva</a></li>
                           <li><a  href="modificarHabitacion.jsp">Modificar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
+                          <li><a  href="eliminarHabitacion.jsp">Eliminar</a></li>
                       </ul>
                   </li>
 
@@ -49,10 +63,10 @@
                           <span>Reservas</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="/HotelSolutionsServlet/Usuario.html">Consultar</a></li>
+                          <li><a  href="consultarReserva.jsp">Consultar</a></li>
                           <li><a  href="nuevaReserva.jsp">Nueva</a></li>
                           <li><a  href="modificarReserva.jsp">Modificar</a></li>
-                          <li><a  href="/HotelSolutionsServlet/EliminarUsuario.html">Eliminar</a></li>
+                          <li><a  href="eliminarReserva.jsp">Eliminar</a></li>
                       </ul>
                   </li>
 					

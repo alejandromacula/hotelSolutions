@@ -41,14 +41,14 @@ public class MostrarUsuarioServlet extends HttpServlet {
 				String nombreDeUsuario =  request.getParameter( "nombreDeUsuario" );
 				
 				AdministradorUsuarios admusuario=new AdministradorUsuarios();
-				Usuario usuario=admusuario.traerUsuario( nombreDeUsuario);
+				Usuario usuario=admusuario.traerUsuario(nombreDeUsuario);
 				System.out.println(usuario);
 				request.setAttribute("usuario", usuario);
 				request.getRequestDispatcher("/vistaUsuario.jsp").forward(request ,
 				response);
 			} catch (
 			Exception e) {
-			response.sendError(500, "El Nombre de Usuario ingresado no existe en la base de datos.");
+				response.sendRedirect("500.html");
 			}
 			}
 	

@@ -12,10 +12,11 @@ import funciones.EmbeddedImageEmailUtil;
 
 public class generarMailConfirmacionReserva {
 
-	public static boolean generarMailConfirmacionReserva(String workingDirectory, long numReserva, String nombre, String apellido, String fechaDesde, String fechaHasta, String tipoHab) {
+	public static boolean generarMailConfirmacionReserva(String workingDirectory, long numReserva, String nombre, String apellido, String email, String fechaDesde, String fechaHasta, String tipoHab) {
 
-		String mailTo = "alejandro_93_7@hotmail.com";
-		String subject = "Test e-mail with inline images";
+		System.out.println(email);
+		String mailTo = email;
+		String subject = "email de confirmacion";
 
 		String separador = System.getProperty("file.separator");
 		String rutaAbsolutaHeader = workingDirectory + "headerMailConfirmacionReserva.html";

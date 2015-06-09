@@ -7,7 +7,7 @@
 			<generator class="identity"/>
 		</id>
 		<property name="privilegio" column="privilegios" type="string"/>
-	  	
+	  	<property name="tipoDeUsuario" column="tipodeusuario" type="string"/>
 	  	
 	  	<!-- defino la relación one-to-many 
   	<set name="usuarios" table="tblusuarios" inverse="true" lazy="true" fetch="select">

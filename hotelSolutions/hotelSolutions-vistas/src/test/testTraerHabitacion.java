@@ -1,6 +1,7 @@
 package test;
 
 import dao.HabitacionDao;
+import dao.TipoDeHabitacionDao;
 import negocio.AdministradorHoteles;
 
 public class testTraerHabitacion {
@@ -11,7 +12,8 @@ public class testTraerHabitacion {
 		//System.out.println(admHoteles.traerHabitacion(1));
 		
 		HabitacionDao habitacionDao=new HabitacionDao();
-		System.out.println(habitacionDao.traerListaHabitacion().size());
+		TipoDeHabitacionDao tdao=new TipoDeHabitacionDao();
+		System.out.println(habitacionDao.traerListaHabitacion(tdao.traerTipoHabitacion("doble")));
 			
 		//System.out.println(habitacionDao.cantidadDeHabitaciones());
 		}

@@ -32,7 +32,6 @@
 		                              <th>Ocupada</th>
 		                              <th>Observaciones</th>
 		                              <th>IdTipoDeHabitacion</th>
-		                              <th>Hotel</th>
 		                          </tr>
 		                          </thead>
 		                          <tbody>
@@ -43,7 +42,6 @@
 		                              <td><%= habitacion.isOcupada() %></td>
 		                              <td><%= habitacion.getObservaciones() %></td>
 		                              <td><%= habitacion.getTipoDeHabitacion().getIdTipoDeHabitacion() %></td>
-		                              <td><%= habitacion.getHotel() %></td>
 		                          </tr>
 		                          
 		                          </tbody>

@@ -57,6 +57,20 @@ public class TipoDeHabitacionDao {
 
 	}
 	
+public TipoDeHabitacion traerTipoHabitacion(String tipoHabitacion) throws HibernateException {
+		
+		TipoDeHabitacion tipoDeHabitacion = null; //cambiar localidad por tipo de usuario
+		
+		try {
+			iniciaOperacion();
+			tipoDeHabitacion = (TipoDeHabitacion) session.createQuery("select t from TipoDeHabitacion t where t.tipo =:tipoHabitacion").setParameter("tipoHabitacion", tipoHabitacion ).uniqueResult();
+
+   		} finally {
+   			session.close();
+   		}
+   		return tipoDeHabitacion;
+
+	}
 	
 	public long altaTipoHabitacion(TipoDeHabitacion tipohabitacion) {
 		long idTipoHabitacion=0;

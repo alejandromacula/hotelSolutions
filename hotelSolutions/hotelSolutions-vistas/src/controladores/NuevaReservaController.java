@@ -88,13 +88,13 @@ public class NuevaReservaController extends HttpServlet {
 						habitacion, usuario));
 				String directorio=request.getSession().getServletContext().getRealPath("/");
 				generarMailConfirmacionReserva.generarMailConfirmacionReserva(directorio, numReserva, usuario.getNombre(), usuario.getApellido(),
-						Funciones.traerFechaCorta(desde), Funciones.traerFechaCorta(hasta), habitacion.getTipoDeHabitacion().getTipo());
+						usuario.getEmail(), Funciones.traerFechaCorta(desde), Funciones.traerFechaCorta(hasta), habitacion.getTipoDeHabitacion().getTipo());
 				
 				response.sendRedirect("index.jsp");
 				
 			} catch (
 			Exception e) {
-			response.sendError(500, "excepcion de nueva reserva.");
+			response.sendRedirect("500.html");
 			}
 			}
 	

@@ -25,8 +25,8 @@ public class testAgregarUsuario {
 		AdministradorUsuarios adm= new AdministradorUsuarios();
 		LocalidadDao lDao= new LocalidadDao();
 		
-		adm.darDeAltaUnUsuario("alejandromacula","123456","Alejandro","Macula", 37871698,
-				"de la cruz", 365, "", lDao.traerLocalidad(1), 42255566,"alejandro_93_7@hotmail.com", new GregorianCalendar(1993, 12, 23), 'm',1);
+		adm.darDeAltaUnUsuario("admin","123456","Usuario","Admin", 37871698,
+				"de la cruz", 365, "", lDao.traerLocalidad(1), 42255566,"alejandro_93_7@hotmail.com", new GregorianCalendar(1993, 12, 23), 'm',2);
 		
 	}
 }

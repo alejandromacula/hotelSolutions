@@ -86,6 +86,7 @@ public class UsuarioDao {
 		}
 	
 	
+	
 	public long altaUsuario(Usuario usuario) {
 		long idUsuario=0;
 		try {
@@ -103,7 +104,7 @@ public class UsuarioDao {
 	
 	
 	
-	public void modificarUsuario(Usuario usuario) {
+	public Usuario modificarUsuario(Usuario usuario) {
 		try {
 		iniciaOperacion();
 		session.update(usuario);
@@ -114,7 +115,24 @@ public class UsuarioDao {
 		} finally {
 		session.close();
 		}
+		return usuario;
 		}
+
+	
+	public void eliminarUsuario(Usuario usuario) {
+		try {
+		iniciaOperacion();
+		session.delete(usuario);
+		tx.commit();
+		} catch (HibernateException he) {
+		manejaExcepcion(he);
+		throw he;
+		} finally {
+		session.close();
+		}
+		return;
+		}
+
 
 	
 	

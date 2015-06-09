@@ -45,9 +45,22 @@ TOP BAR CONTENT & NOTIFICATIONS
       <a href="index.html" class="logo"><b>HOTEL SOLUTIONS</b></a>
       <!--logo end-->
       
+      <%@page import="datos.Usuario"%>
+      <% 
+			HttpSession adminSession= (HttpSession) request.getSession();
+			Usuario usuarioEnSesion=null;
+			usuarioEnSesion=(Usuario)adminSession.getAttribute("usuario");
+			if(session==null || usuarioEnSesion==null)
+				response.sendRedirect("login.html");
+		    if(usuarioEnSesion!=null){
+				if(usuarioEnSesion.getTipoDeUsuario().getTipoDeUsuario().compareTo("admin")!=0)
+					response.sendRedirect("indexUsuario.jsp");
+		    }
+	  %> 
+      
       <div class="top-menu">
       	<ul class="nav pull-right top-menu">
-              <li><a class="logout" href="login.html">Logout</a></li>
+              <li><a class="logout" href="/HotelSolutionsServlet/Logout">Logout</a></li>
       	</ul>
       </div>
   </header>

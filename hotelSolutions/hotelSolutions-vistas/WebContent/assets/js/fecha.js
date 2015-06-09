@@ -29,7 +29,6 @@ $("#buscarUsuario").click(function(){
 	
     });
 $(document).ready ( function(){
-	  inicializarTabla();
 });
 
 $("#seleccionarmes li").click(function(){
@@ -54,6 +53,20 @@ $("#seleccionarmes li").click(function(){
 	
 });
 
+function  msjBienvenida(name) {
+	var ruta= $(location).attr('pathname');
+	if(ruta.match(/index.jsp*/)){
+		var unique_id = $.gritter.add({
+	    // (string | mandatory) the heading of the notification
+	    title: 'Bienvenido '+name+'!',
+	    // (string | mandatory) the text inside the notification
+	    text: 'A traves de este menu podras gestionar tu establecimiento',
+	    // (string | optional) the class name you want to apply to that specific message
+	    class_name: 'my-sticky-class'
+		});
+	}
+return false;
+};
 
 $(function() {
     $('input[name="daterange"]').daterangepicker();

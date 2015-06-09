@@ -104,7 +104,7 @@ public class TablaReservas extends HttpServlet {
 				
 			} catch (
 			Exception e) {
-			response.sendError(500, "Ocurrió un error al generar la tabla de reservas");
+				response.sendRedirect("500.html");
 		}
 		}
 	

@@ -15,7 +15,7 @@ public static void main(String[] args) {
 	AdministradorHoteles admHoteles=new AdministradorHoteles();
 	//System.out.println( tipoHabDao.traerTipoHabitacion(1) );
 	
-	admHoteles.darDeAltaUnaHabitacion(1, 2, true, false, "ninguna", 1, 3);
+	admHoteles.darDeAltaUnaHabitacion(1, 99, true, false, "ninguna", 2, 3);
 		
 		
 	}
